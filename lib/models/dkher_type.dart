@@ -48,7 +48,6 @@ class _DkherTypeState extends State<DkherType> {
               textAlign: TextAlign.center, // Align text to the center
             ),
             SizedBox(height: 10),
-            SizedBox(height: 10),
             ElevatedButton(
               onPressed: _decrementRepeat, // Decrease repeat on press
               child: Text(
