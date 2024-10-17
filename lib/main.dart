@@ -1,4 +1,7 @@
+import 'package:adkhar_app/components/theme.dart';
+import 'package:adkhar_app/components/theme_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './models/dkher.dart';
 import './screens/evening.dart';
 import './screens/morning.dart';
@@ -8,20 +11,38 @@ import './screens/sleep.dart';
 import './screens/weakup.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeNotifier(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage(),
+    return Consumer<ThemeNotifier>(
+      builder: (context, themeNotifier, child) {
+        return AnimatedTheme(
+          data: themeNotifier.themeMode == ThemeMode.light
+              ? lightTheme
+              : darkTheme,
+          duration: Duration(milliseconds: 300), // Adjust this for smoothness
+          child: MaterialApp(
+            themeMode: themeNotifier.themeMode,
+            theme: lightTheme,
+            darkTheme: darkTheme,
+            debugShowCheckedModeBanner: false,
+            home: MyHomePage(),
+          ),
+        );
+      },
     );
   }
 }
 
+//debugShowCheckedModeBanner: false,
 class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -44,6 +65,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              ThemeNotifier themeNotifier =
+                  Provider.of<ThemeNotifier>(context, listen: false);
+              if (themeNotifier.themeMode == ThemeMode.light) {
+                themeNotifier.setTheme(ThemeMode.dark);
+                //print('Switched to Dark Mode');
+              } else {
+                themeNotifier.setTheme(ThemeMode.light);
+                //print('Switched to Light Mode');
+              }
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 25),

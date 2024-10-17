@@ -1,14 +1,10 @@
+import 'package:adkhar_app/components/light_dark_mode.dart';
 import 'package:flutter/material.dart';
 import '../models/allAdkher.dart';
 
-class Morning extends StatefulWidget {
+class Morning extends StatelessWidget {
   const Morning({super.key});
 
-  @override
-  State<Morning> createState() => _MorningState();
-}
-
-class _MorningState extends State<Morning> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +21,14 @@ class _MorningState extends State<Morning> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              swithDarkLightMode(context);
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
           padding: const EdgeInsets.all(8),

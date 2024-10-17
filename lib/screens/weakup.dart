@@ -1,14 +1,10 @@
+import 'package:adkhar_app/components/light_dark_mode.dart';
 import 'package:flutter/material.dart';
 import '../models/allAdkher.dart';
 
-class Weakup extends StatefulWidget {
+class Weakup extends StatelessWidget {
   const Weakup({super.key});
 
-  @override
-  State<Weakup> createState() => _WeakupState();
-}
-
-class _WeakupState extends State<Weakup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +21,14 @@ class _WeakupState extends State<Weakup> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              swithDarkLightMode(context);
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
           padding: const EdgeInsets.all(8),

@@ -1,14 +1,10 @@
+import 'package:adkhar_app/components/light_dark_mode.dart';
 import 'package:flutter/material.dart';
 import '../models/allAdkher.dart';
 
-class Sleep extends StatefulWidget {
+class Sleep extends StatelessWidget {
   const Sleep({super.key});
 
-  @override
-  State<Sleep> createState() => _SleepState();
-}
-
-class _SleepState extends State<Sleep> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +21,14 @@ class _SleepState extends State<Sleep> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              swithDarkLightMode(context);
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
           padding: const EdgeInsets.all(8),

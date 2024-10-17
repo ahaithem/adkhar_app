@@ -1,3 +1,4 @@
+import 'package:adkhar_app/components/light_dark_mode.dart';
 import 'package:flutter/material.dart';
 import '../models/allAdkher.dart';
 
@@ -25,6 +26,14 @@ class _PrayerState extends State<Prayer> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              swithDarkLightMode(context);
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
           padding: const EdgeInsets.all(8),

@@ -1,15 +1,13 @@
+import 'package:adkhar_app/components/theme_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:adkhar_app/components/light_dark_mode.dart';
+import 'package:provider/provider.dart';
 import '../models/dkher_type.dart';
 import '../models/allAdkher.dart';
 
-class Evening extends StatefulWidget {
+class Evening extends StatelessWidget {
   const Evening({super.key});
 
-  @override
-  State<Evening> createState() => _EveningState();
-}
-
-class _EveningState extends State<Evening> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +24,14 @@ class _EveningState extends State<Evening> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              swithDarkLightMode(context);
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
           padding: const EdgeInsets.all(8),
