@@ -2,14 +2,9 @@ import 'package:adkhar_app/components/light_dark_mode.dart';
 import 'package:flutter/material.dart';
 import '../models/allAdkher.dart';
 
-class Prayer extends StatefulWidget {
+class Prayer extends StatelessWidget {
   const Prayer({super.key});
 
-  @override
-  State<Prayer> createState() => _PrayerState();
-}
-
-class _PrayerState extends State<Prayer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
