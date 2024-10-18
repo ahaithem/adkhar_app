@@ -1,8 +1,5 @@
-import 'package:adkhar_app/components/theme_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:adkhar_app/components/light_dark_mode.dart';
-import 'package:provider/provider.dart';
-import '../models/dkher_type.dart';
 import '../models/allAdkher.dart';
 
 class Evening extends StatelessWidget {
@@ -26,7 +23,7 @@ class Evening extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.brightness_6),
+            icon: const Icon(Icons.brightness_6),
             onPressed: () {
               swithDarkLightMode(context);
             },

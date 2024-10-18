@@ -6,7 +6,7 @@ class DkherName extends StatelessWidget {
   final String imagePath;
   final Widget screen;
 
-  DkherName(
+  const DkherName(
       {required this.name,
       required this.color,
       required this.imagePath,
@@ -30,7 +30,7 @@ class DkherName extends StatelessWidget {
             color: color, // Set background color
             borderRadius: BorderRadius.circular(12), // Rounded corners
           ),
-          padding: EdgeInsets.all(16), // Add some padding
+          padding: const EdgeInsets.all(16), // Add some padding
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -41,7 +41,7 @@ class DkherName extends StatelessWidget {
               ),
               Text(
                 name,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 38,
                     color: Colors.white,
                     fontWeight: FontWeight.bold), // Styling text

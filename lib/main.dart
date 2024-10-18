@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[600],
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.end, // Align to the right
           children: [
             Text(

@@ -10,7 +10,7 @@ class Prayer extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[600],
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
@@ -23,7 +23,7 @@ class Prayer extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.brightness_6),
+            icon: const Icon(Icons.brightness_6),
             onPressed: () {
               swithDarkLightMode(context);
             },
